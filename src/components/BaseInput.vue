@@ -4,7 +4,7 @@ interface Props {
   placeholder?: string
   label?: string
   disabled?: boolean
-  type: inputType
+  type?: inputType
 }
 withDefaults(defineProps<Props>(), {
   label: 'Input value',
