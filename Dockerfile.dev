@@ -1,0 +1,14 @@
+FROM node:23-alpine3.20
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install # or yarn install
+
+COPY . .
+
+# Expose the port for the dev server
+EXPOSE 8080
+
+# Start the dev server, binding to all interfaces
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
